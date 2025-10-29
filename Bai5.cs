@@ -93,7 +93,7 @@ namespace BTH2
         public override bool input()
         {
             bool cd1 = base.input();
-            Console.Write($"Nhap nam xay dung {getloai()}: ");
+            Console.Write($"Nhap tang {getloai()}: ");
             bool cd2 = int.TryParse(Console.ReadLine(), out Tang)&&Tang>=0;
             return cd1 && cd2;
         }
@@ -274,7 +274,7 @@ namespace BTH2
             }
             for (int i = 0; i < l.Count; i++)
             {
-                if (l[i].getdiadiem()!=null&& l[i].getdiadiem().ToLower().Contains(dd.ToLower()) && l[i].getgia() <= gb && l[i].getdientich() >= dt)
+                if (dd!=null&&l[i].getdiadiem()!=null&& l[i].getdiadiem().ToLower().Contains(dd.ToLower()) && l[i].getgia() <= gb && l[i].getdientich() >= dt)
                 {
                     Console.WriteLine(l[i].getloai());
                     l[i].output();

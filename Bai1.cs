@@ -63,7 +63,7 @@ namespace BTH2
         bool input()
         {
             Console.WriteLine("Nhap thang: ");
-            if (!int.TryParse(Console.ReadLine(), out th) ||th<0||th>12) return false;
+            if (!int.TryParse(Console.ReadLine(), out th) ||th<1||th>12) return false;
             Console.WriteLine("Nhap nam: ");
             string str= Console.ReadLine();
             if (!int.TryParse(str, out n)) return false;

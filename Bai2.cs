@@ -13,22 +13,41 @@ namespace BTH2
         {
             solve();
         }
-        static void solve()
+        void solve()
         {
             
             Console.WriteLine("Nhap duong dan thu muc: ");
             string? str = Console.ReadLine();
+            check(str);
+        }
+        void check(string str)
+        {
             if (Directory.Exists(str))
             {
-                string[] files = Directory.GetFiles(str);
-                for (int i = 0; i < files.Length; i++)
+                try
                 {
-                    Console.WriteLine(files[i]);
+                    //in ra file
+                    Console.WriteLine("Tap tin: ");
+                    string[] files = Directory.GetFiles(str);
+                    for (int i = 0; i < files.Length; i++)
+                    {
+                        Console.WriteLine(files[i]);
+                    }
+                    //in ra directory
+                    Console.WriteLine("Thu muc: ");
+                    string[] dir = Directory.GetDirectories(str);
+                    for (int i = 0; i < dir.Length; i++)
+                    {
+                        Console.WriteLine(dir[i]);
+                    }
                 }
-                string[] dir = Directory.GetDirectories(str);
-                for (int i = 0; i < dir.Length; i++)
+                catch (UnauthorizedAccessException ex)
                 {
-                    Console.WriteLine(dir[i]);
+                    Console.WriteLine($"Khong co quyen truy cap thu muc: {str}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine($"Loi khac : {ex.Message}");
                 }
             }
             else
