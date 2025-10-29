@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-
 namespace BTH2
 {
     internal class DatDai
@@ -275,7 +274,7 @@ namespace BTH2
             }
             for (int i = 0; i < l.Count; i++)
             {
-                if (l[i].getdiadiem().ToLower() == dd.ToLower() || l[i].getgia() <= gb || l[i].getdientich() >= dt)
+                if (l[i].getdiadiem()!=null&& l[i].getdiadiem().ToLower().Contains(dd.ToLower()) && l[i].getgia() <= gb && l[i].getdientich() >= dt)
                 {
                     Console.WriteLine(l[i].getloai());
                     l[i].output();

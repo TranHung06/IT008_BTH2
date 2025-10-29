@@ -25,6 +25,11 @@ namespace BTH2
                 {
                     Console.WriteLine(files[i]);
                 }
+                string[] dir = Directory.GetDirectories(str);
+                for (int i = 0; i < dir.Length; i++)
+                {
+                    Console.WriteLine(dir[i]);
+                }
             }
             else
             {

@@ -44,6 +44,11 @@ namespace BTH2
                     case 1:
                         a = input();
                         b = input();
+                        if (b.tu == 0)
+                        {
+                            Console.WriteLine("Tu so can !=0 de thuc hien phep chia");
+                            break;
+                        }
                         Phanso tong = a + b;
                         toigian(tong);
                         Phanso hieu = a - b;

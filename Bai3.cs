@@ -115,7 +115,7 @@ namespace BTH2
         //In mảng
         void printarr()
         {
-            if (v.GetLength(0) == 0 && v.GetLength(1) == 0)
+            if (v.GetLength(0) == 0 || v.GetLength(1) == 0)
             {
                 Console.WriteLine("Mang rong.");
                 return;
@@ -203,7 +203,7 @@ namespace BTH2
                     row.Clear();
                     row.Add(i + 1);
                     max = temp;
-                }else if (temp == max)
+                }else if (temp == max && temp!=0)
                 {
                     row.Add(i + 1);
                 }
